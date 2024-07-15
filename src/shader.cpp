@@ -110,3 +110,7 @@ void Shader::setFloat3(const std::string& name, float value) const
 {
     glUniform3f(glGetUniformLocation(ID, name.c_str()), value, value, value);
 }
+void Shader::setMatrix4(const std::string& name, float* value) const
+{
+    glUniformMatrix4fv(glGetUniformLocation(ID, name.c_str()), 1, GL_FALSE, value);
+}
